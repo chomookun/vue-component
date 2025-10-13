@@ -1,9 +1,9 @@
 {
   "name": "vuejs-component",
   "version": "1.0.0",
-  "main": "dist/vuejs-component.js",
+  "main": "dist/vuejs-component.common.js",
   "exports": {
-    ".": "./dist/vuejs-component.js"
+    ".": "./dist/vuejs-component.commonjs"
   },
   "files": ["dist"],
   "scripts": {
