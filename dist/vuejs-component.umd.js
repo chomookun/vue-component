@@ -106,6 +106,7 @@ __webpack_require__.r(__webpack_exports__);
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
   XInput: () => (/* reexport */ XInput),
+  XTable: () => (/* reexport */ XTable),
   "default": () => (/* binding */ entry_lib)
 });
 
@@ -223,8 +224,65 @@ var exportHelper = __webpack_require__(262);
 const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(XInputvue_type_script_lang_js, [['render',render],['__scopeId',"data-v-868979d0"]])
 
 /* harmony default export */ const XInput = (__exports__);
+;// ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XTable.vue?vue&type=template&id=28ece026&scoped=true
+
+
+function XTablevue_type_template_id_28ece026_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("div", {
+    class: "x-table",
+    style: (0,external_commonjs_vue_commonjs2_vue_root_Vue_.normalizeStyle)($options.tableStyle)
+  }, [
+    (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderSlot)(_ctx.$slots, "default", {}, undefined, true)
+  ], 4))
+}
+;// ./src/components/XTable.vue?vue&type=template&id=28ece026&scoped=true
+
+;// ./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XTable.vue?vue&type=script&lang=js
+
+/* harmony default export */ const XTablevue_type_script_lang_js = ({
+  name: 'XTable',
+  props: {
+    columns: {
+      type: Number,
+      default: 2
+    },
+    gap: {
+      type: String,
+      default: '1rem'
+    }
+  },
+  computed: {
+    tableStyle() {
+      return {
+        display: 'grid',
+        gridTemplateColumns: `repeat(${this.columns}, 1fr)`,
+        gap: this.gap
+      };
+    }
+  }
+});
+
+;// ./src/components/XTable.vue?vue&type=script&lang=js
+ 
+;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-52.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-52.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-52.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XTable.vue?vue&type=style&index=0&id=28ece026&scoped=true&lang=css
+// extracted by mini-css-extract-plugin
+
+;// ./src/components/XTable.vue?vue&type=style&index=0&id=28ece026&scoped=true&lang=css
+
+;// ./src/components/XTable.vue
+
+
+
+
+;
+
+
+const XTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(XTablevue_type_script_lang_js, [['render',XTablevue_type_template_id_28ece026_scoped_true_render],['__scopeId',"data-v-28ece026"]])
+
+/* harmony default export */ const XTable = (XTable_exports_);
 ;// ./src/index.js
 // src/index.js
+
 
 
 
@@ -235,6 +293,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(XInputvue_type_
 /* harmony default export */ const src_0 = ({
   install(app) {
     app.component('XInput', XInput);
+    app.component('XTable', Xtable);
   }
 });
 
