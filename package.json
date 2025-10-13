@@ -1,13 +1,13 @@
 {
-  "name": "vuejs-component",
+  "name": "vue-component",
   "version": "1.0.0",
-  "main": "dist/vuejs-component.common.js",
+  "main": "dist/vue-component.common.js",
   "exports": {
-    ".": "./dist/vuejs-component.common.js"
+    ".": "./dist/vue-component.common.js"
   },
   "files": ["dist"],
   "scripts": {
-    "build": "vue-cli-service build --target lib --name vuejs-component src/index.js"
+    "build": "vue-cli-service build --target lib --name vue-component src/index.js"
   },
   "peerDependencies": {
     "vue": "^3.3.0",
