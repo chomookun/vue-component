@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/vuejs-component.common.js",
   "exports": {
-    ".": "./dist/vuejs-component.commonjs"
+    ".": "./dist/vuejs-component.common.js"
   },
   "files": ["dist"],
   "scripts": {
