@@ -7,9 +7,10 @@
   },
   "files": ["dist"],
   "scripts": {
-    "build": "vite build"
+    "build": "vue-cli-service build --target lib -name VuejsComponent src/index.js"
   },
   "peerDependencies": {
-    "vue": "^3.0.0"
+    "vue": "^3.3.0",
+    "@vue/cli-service": "^5.0.0"
   }
 }
