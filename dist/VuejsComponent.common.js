@@ -1,14 +1,4 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("vue"));
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["vuejs-component"] = factory(require("vue"));
-	else
-		root["vuejs-component"] = factory(root["Vue"]);
-})((typeof self !== 'undefined' ? self : this), (__WEBPACK_EXTERNAL_MODULE__274__) => {
-return /******/ (() => { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
@@ -28,13 +18,6 @@ exports.A = (sfc, props) => {
     return target;
 };
 
-
-/***/ }),
-
-/***/ 274:
-/***/ ((module) => {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__274__;
 
 /***/ })
 
@@ -127,8 +110,8 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ const setPublicPath = (null);
 
-// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
-var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__(274);
+;// external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
+const external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject = require("vue");
 ;// ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XInput.vue?vue&type=template&id=868979d0&scoped=true
 
 
@@ -141,15 +124,15 @@ const _hoisted_4 = {
 }
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("div", _hoisted_1, [
+  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", _hoisted_1, [
     ($props.label)
-      ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("label", {
+      ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("label", {
           key: 0,
           for: $props.id,
           class: "x-input-label"
-        }, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)($props.label), 9, _hoisted_2))
-      : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true),
-    (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("input", {
+        }, (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.toDisplayString)($props.label), 9, _hoisted_2))
+      : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true),
+    (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementVNode)("input", {
       id: $props.id,
       type: $props.type,
       placeholder: $props.placeholder,
@@ -160,8 +143,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       class: "x-input"
     }, null, 40, _hoisted_3),
     ($props.error)
-      ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("span", _hoisted_4, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)($props.error), 1))
-      : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true)
+      ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("span", _hoisted_4, (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.toDisplayString)($props.error), 1))
+      : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)
   ]))
 }
 ;// ./src/components/XInput.vue?vue&type=template&id=868979d0&scoped=true
@@ -205,7 +188,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 ;// ./src/components/XInput.vue?vue&type=script&lang=js
  
-;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-52.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-52.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-52.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XInput.vue?vue&type=style&index=0&id=868979d0&scoped=true&lang=css
+;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XInput.vue?vue&type=style&index=0&id=868979d0&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
 ;// ./src/components/XInput.vue?vue&type=style&index=0&id=868979d0&scoped=true&lang=css
@@ -244,8 +227,7 @@ const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(XInputvue_type_
 /* harmony default export */ const entry_lib = (src_0);
 
 
-/******/ 	return __webpack_exports__;
+module.exports = __webpack_exports__;
 /******/ })()
 ;
-});
-//# sourceMappingURL=vuejs-component.umd.js.map
+//# sourceMappingURL=VuejsComponent.common.js.map
