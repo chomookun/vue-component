@@ -1,0 +1,15 @@
+{
+  "name": "vuejs-component",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  }
+}
