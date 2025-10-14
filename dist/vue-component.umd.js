@@ -224,15 +224,15 @@ var exportHelper = __webpack_require__(262);
 const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(XInputvue_type_script_lang_js, [['render',render],['__scopeId',"data-v-868979d0"]])
 
 /* harmony default export */ const XInput = (__exports__);
-;// ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XTable.vue?vue&type=template&id=1b9a9005&scoped=true
+;// ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XTable.vue?vue&type=template&id=6c3ae022&scoped=true
 
 
-const XTablevue_type_template_id_1b9a9005_scoped_true_hoisted_1 = { class: "x-table" }
+const XTablevue_type_template_id_6c3ae022_scoped_true_hoisted_1 = { class: "x-table" }
 
-function XTablevue_type_template_id_1b9a9005_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("div", XTablevue_type_template_id_1b9a9005_scoped_true_hoisted_1, [
+function XTablevue_type_template_id_6c3ae022_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("table", XTablevue_type_template_id_6c3ae022_scoped_true_hoisted_1, [
     ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_.Fragment, null, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderList)($options.rows, (row, rowIndex) => {
-      return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("div", {
+      return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("tbody", {
         class: "x-row",
         key: rowIndex
       }, [
@@ -248,7 +248,7 @@ function XTablevue_type_template_id_1b9a9005_scoped_true_render(_ctx, _cache, $p
     }), 128))
   ]))
 }
-;// ./src/components/XTable.vue?vue&type=template&id=1b9a9005&scoped=true
+;// ./src/components/XTable.vue?vue&type=template&id=6c3ae022&scoped=true
 
 ;// ./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XTable.vue?vue&type=script&lang=js
 
@@ -282,10 +282,10 @@ function XTablevue_type_template_id_1b9a9005_scoped_true_render(_ctx, _cache, $p
 
 ;// ./src/components/XTable.vue?vue&type=script&lang=js
  
-;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-52.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-52.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-52.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XTable.vue?vue&type=style&index=0&id=1b9a9005&scoped=true&lang=css
+;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-52.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-52.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-52.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XTable.vue?vue&type=style&index=0&id=6c3ae022&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// ./src/components/XTable.vue?vue&type=style&index=0&id=1b9a9005&scoped=true&lang=css
+;// ./src/components/XTable.vue?vue&type=style&index=0&id=6c3ae022&scoped=true&lang=css
 
 ;// ./src/components/XTable.vue
 
@@ -295,7 +295,7 @@ function XTablevue_type_template_id_1b9a9005_scoped_true_render(_ctx, _cache, $p
 ;
 
 
-const XTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(XTablevue_type_script_lang_js, [['render',XTablevue_type_template_id_1b9a9005_scoped_true_render],['__scopeId',"data-v-1b9a9005"]])
+const XTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(XTablevue_type_script_lang_js, [['render',XTablevue_type_template_id_6c3ae022_scoped_true_render],['__scopeId',"data-v-6c3ae022"]])
 
 /* harmony default export */ const XTable = (XTable_exports_);
 ;// ./src/index.js

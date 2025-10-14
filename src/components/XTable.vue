@@ -1,11 +1,11 @@
 <template>
-  <div class="x-table">
-    <div class="x-row" v-for="(row, rowIndex) in rows" :key="rowIndex">
+  <table class="x-table">
+    <tbody class="x-row" v-for="(row, rowIndex) in rows" :key="rowIndex">
       <div class="x-cell" v-for="(cell, cellIndex) in row" :key="cellIndex">
         <component :is="cell" />
       </div>
-    </div>
-  </div>
+    </tbody>
+  </table>
 </template>
 
 <script>
