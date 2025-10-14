@@ -1,13 +1,11 @@
 <template>
-  <table class="x-table">
-    <tbody>
-      <tr v-for="(row, rowIndex) in rows" :key="rowIndex">
-        <td v-for="(cell, cellIndex) in row" :key="cellIndex">
-          <component :is="cell" />
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="x-table">
+    <div class="x-row" v-for="(row, rowIndex) in rows" :key="rowIndex">
+      <div class="x-cell" v-for="(cell, cellIndex) in row" :key="cellIndex">
+        <component :is="cell" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -17,11 +15,15 @@ export default {
     columns: {
       type: Number,
       default: 2
+    },
+    gap: {
+      type: String,
+      default: '1rem'
     }
   },
   computed: {
     slotComponents() {
-      // 슬롯으로 들어온 VNode들을 배열로 추출
+      // 슬롯 요소를 배열로 추출
       return this.$slots.default ? this.$slots.default().filter(v => v.type) : []
     },
     rows() {
@@ -38,10 +40,16 @@ export default {
 
 <style scoped>
 .x-table {
-  width: 100%;
-  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.x-table td {
+.x-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
+  gap: 1rem;
+}
+.x-cell {
   border: 1px solid #ccc;
   padding: 0.5rem;
 }
