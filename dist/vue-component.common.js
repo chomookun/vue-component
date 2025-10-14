@@ -88,8 +88,8 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  XInput: () => (/* reexport */ XInput),
-  XTable: () => (/* reexport */ XTable),
+  VInput: () => (/* reexport */ VInput),
+  VSelect: () => (/* reexport */ VSelect),
   "default": () => (/* binding */ entry_lib)
 });
 
@@ -113,10 +113,79 @@ if (typeof window !== 'undefined') {
 
 ;// external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 const external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject = require("vue");
-;// ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XInput.vue?vue&type=template&id=868979d0&scoped=true
+;// ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VInput.vue?vue&type=template&id=f4be5d22
 
 
-const _hoisted_1 = { class: "x-input-wrapper" }
+const _hoisted_1 = ["id", "type", "placeholder", "disabled", "readonly", "value"]
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("input", {
+    id: $props.id,
+    type: $props.type,
+    placeholder: $props.placeholder,
+    disabled: $props.disabled,
+    readonly: $props.readonly,
+    value: $props.modelValue,
+    onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.value))),
+    class: "x-input"
+  }, null, 40, _hoisted_1))
+}
+;// ./src/components/VInput.vue?vue&type=template&id=f4be5d22
+
+;// ./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VInput.vue?vue&type=script&lang=js
+
+/* harmony default export */ const VInputvue_type_script_lang_js = ({
+  name: 'VInput',
+  props: {
+    modelValue: [String, Number],
+    type: {
+      type: String,
+      default: 'text'
+    },
+    label: {
+      type: String,
+      default: ''
+    },
+    placeholder: {
+      type: String,
+      default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
+    error: {
+      type: String,
+      default: ''
+    },
+    id: {
+      type: String,
+      default: () => `x-input-${Math.random().toString(36).substr(2, 9)}`
+    }
+  }
+});
+
+;// ./src/components/VInput.vue?vue&type=script&lang=js
+ 
+// EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
+var exportHelper = __webpack_require__(262);
+;// ./src/components/VInput.vue
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(VInputvue_type_script_lang_js, [['render',render]])
+
+/* harmony default export */ const VInput = (__exports__);
+;// ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VSelect.vue?vue&type=template&id=731daa68&scoped=true
+
+
+const VSelectvue_type_template_id_731daa68_scoped_true_hoisted_1 = { class: "x-input-wrapper" }
 const _hoisted_2 = ["for"]
 const _hoisted_3 = ["id", "type", "placeholder", "disabled", "readonly", "value"]
 const _hoisted_4 = {
@@ -124,8 +193,8 @@ const _hoisted_4 = {
   class: "x-input-error"
 }
 
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", _hoisted_1, [
+function VSelectvue_type_template_id_731daa68_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", VSelectvue_type_template_id_731daa68_scoped_true_hoisted_1, [
     ($props.label)
       ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("label", {
           key: 0,
@@ -148,11 +217,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       : (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createCommentVNode)("", true)
   ]))
 }
-;// ./src/components/XInput.vue?vue&type=template&id=868979d0&scoped=true
+;// ./src/components/VSelect.vue?vue&type=template&id=731daa68&scoped=true
 
-;// ./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XInput.vue?vue&type=script&lang=js
+;// ./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VSelect.vue?vue&type=script&lang=js
 
-/* harmony default export */ const XInputvue_type_script_lang_js = ({
+/* harmony default export */ const VSelectvue_type_script_lang_js = ({
   name: 'XInput',
   props: {
     modelValue: [String, Number],
@@ -187,16 +256,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }
 });
 
-;// ./src/components/XInput.vue?vue&type=script&lang=js
+;// ./src/components/VSelect.vue?vue&type=script&lang=js
  
-;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XInput.vue?vue&type=style&index=0&id=868979d0&scoped=true&lang=css
+;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VSelect.vue?vue&type=style&index=0&id=731daa68&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// ./src/components/XInput.vue?vue&type=style&index=0&id=868979d0&scoped=true&lang=css
+;// ./src/components/VSelect.vue?vue&type=style&index=0&id=731daa68&scoped=true&lang=css
 
-// EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
-var exportHelper = __webpack_require__(262);
-;// ./src/components/XInput.vue
+;// ./src/components/VSelect.vue
 
 
 
@@ -204,97 +271,19 @@ var exportHelper = __webpack_require__(262);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(XInputvue_type_script_lang_js, [['render',render],['__scopeId',"data-v-868979d0"]])
+const VSelect_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(VSelectvue_type_script_lang_js, [['render',VSelectvue_type_template_id_731daa68_scoped_true_render],['__scopeId',"data-v-731daa68"]])
 
-/* harmony default export */ const XInput = (__exports__);
-;// ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XTable.vue?vue&type=template&id=6c3ae022&scoped=true
-
-
-const XTablevue_type_template_id_6c3ae022_scoped_true_hoisted_1 = { class: "x-table" }
-
-function XTablevue_type_template_id_6c3ae022_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("table", XTablevue_type_template_id_6c3ae022_scoped_true_hoisted_1, [
-    ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.Fragment, null, (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.renderList)($options.rows, (row, rowIndex) => {
-      return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("tbody", {
-        class: "x-row",
-        key: rowIndex
-      }, [
-        ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.Fragment, null, (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.renderList)(row, (cell, cellIndex) => {
-          return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createElementBlock)("div", {
-            class: "x-cell",
-            key: cellIndex
-          }, [
-            ((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.createBlock)((0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.resolveDynamicComponent)(cell)))
-          ]))
-        }), 128))
-      ]))
-    }), 128))
-  ]))
-}
-;// ./src/components/XTable.vue?vue&type=template&id=6c3ae022&scoped=true
-
-;// ./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XTable.vue?vue&type=script&lang=js
-
-/* harmony default export */ const XTablevue_type_script_lang_js = ({
-  name: 'XTable',
-  props: {
-    columns: {
-      type: Number,
-      default: 2
-    },
-    gap: {
-      type: String,
-      default: '1rem'
-    }
-  },
-  computed: {
-    slotComponents() {
-      // 슬롯 요소를 배열로 추출
-      return this.$slots.default ? this.$slots.default().filter(v => v.type) : []
-    },
-    rows() {
-      const result = []
-      const items = this.slotComponents
-      for (let i = 0; i < items.length; i += this.columns) {
-        result.push(items.slice(i, i + this.columns))
-      }
-      return result
-    }
-  }
-});
-
-;// ./src/components/XTable.vue?vue&type=script&lang=js
- 
-;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-12.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/XTable.vue?vue&type=style&index=0&id=6c3ae022&scoped=true&lang=css
-// extracted by mini-css-extract-plugin
-
-;// ./src/components/XTable.vue?vue&type=style&index=0&id=6c3ae022&scoped=true&lang=css
-
-;// ./src/components/XTable.vue
-
-
-
-
-;
-
-
-const XTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(XTablevue_type_script_lang_js, [['render',XTablevue_type_template_id_6c3ae022_scoped_true_render],['__scopeId',"data-v-6c3ae022"]])
-
-/* harmony default export */ const XTable = (XTable_exports_);
+/* harmony default export */ const VSelect = (VSelect_exports_);
 ;// ./src/index.js
-// src/index.js
 
 
 
 
-// 개별 컴포넌트 export
 
-
-// plugin 방식 export (Vue.use() 또는 app.use()로 등록 가능)
 /* harmony default export */ const src_0 = ({
   install(app) {
-    app.component('XInput', XInput);
-    app.component('XTable', XTable);
+    app.component('VInput', VInput);
+    app.component('VSelect', VSelect);
   }
 });
 
