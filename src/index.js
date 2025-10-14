@@ -10,6 +10,6 @@ export { XInput, XTable };
 export default {
   install(app) {
     app.component('XInput', XInput);
-    app.component('XTable', Xtable);
+    app.component('XTable', XTable);
   }
 };
