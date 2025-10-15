@@ -8,11 +8,13 @@
   "files": ["dist"],
   "scripts": {
     "build": "vue-cli-service build --target lib --name vue-component src/index.js",
-    "watch": "npx chokidar \"src/**/*\" -c \"npm run build\""
+    "watch": "npx chokidar \"src/**/*\" -c \"npm run build\"",
+    "serve": "vue-cli-service serve"
   },
   "peerDependencies": {
     "vue": "^3.3.0",
     "@vue/cli-service": "^5.0.0",
-    "chokidar-cli": "^3.0.0"
+    "chokidar-cli": "^3.0.0",
+    "vue-router": "^4.x.x"
   }
 }

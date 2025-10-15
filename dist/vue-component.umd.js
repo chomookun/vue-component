@@ -12,25 +12,6 @@ return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 262:
-/***/ ((__unused_webpack_module, exports) => {
-
-var __webpack_unused_export__;
-
-__webpack_unused_export__ = ({ value: true });
-// runtime helper for setting properties on components
-// in a tree-shakable way
-exports.A = (sfc, props) => {
-    const target = sfc.__vccOpts || sfc;
-    for (const [key, val] of props) {
-        target[key] = val;
-    }
-    return target;
-};
-
-
-/***/ }),
-
 /***/ 274:
 /***/ ((module) => {
 
@@ -105,6 +86,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  DataHandler: () => (/* reexport */ src_DataHandler),
   VInput: () => (/* reexport */ VInput),
   VSelect: () => (/* reexport */ VSelect),
   "default": () => (/* binding */ entry_lib)
@@ -128,170 +110,232 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ const setPublicPath = (null);
 
+;// ./src/DataHandler.js
+const DataHandler = {
+
+  assign(target, source) {
+    if (Array.isArray(target) && Array.isArray(source)) {
+      this.assignArray(target, source)
+    } else {
+      this.assignObject(target, source)
+    }
+  },
+
+  assignObject(target, source) {
+    for (const key in target) {
+      delete target[key]
+    }
+    Object.assign(target, source)
+  },
+
+  assignArray(target, source) {
+    target.length = 0;
+    target.push(...source);
+  }
+
+}
+
+/* harmony default export */ const src_DataHandler = (DataHandler);
+
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__(274);
-;// ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VInput.vue?vue&type=template&id=f4be5d22
+;// ./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VInput.vue?vue&type=script&setup=true&lang=js
 
 
-const _hoisted_1 = ["id", "type", "placeholder", "disabled", "readonly", "value"]
+const _hoisted_1 = ["value", "type", "readonly", "disabled", "placeholder", "checked"]
 
-function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("input", {
-    id: $props.id,
-    type: $props.type,
-    placeholder: $props.placeholder,
-    disabled: $props.disabled,
-    readonly: $props.readonly,
-    value: $props.modelValue,
-    onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.value))),
-    class: "x-input"
-  }, null, 40, _hoisted_1))
-}
-;// ./src/components/VInput.vue?vue&type=template&id=f4be5d22
+;
 
-;// ./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VInput.vue?vue&type=script&lang=js
 
-/* harmony default export */ const VInputvue_type_script_lang_js = ({
-  name: 'VInput',
+/* harmony default export */ const VInputvue_type_script_setup_true_lang_js = ({
+  __name: 'VInput',
   props: {
-    modelValue: [String, Number],
-    type: {
-      type: String,
-      default: 'text'
-    },
-    label: {
-      type: String,
-      default: ''
-    },
-    placeholder: {
-      type: String,
-      default: ''
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    readonly: {
-      type: Boolean,
-      default: false
-    },
-    error: {
-      type: String,
-      default: ''
-    },
-    id: {
-      type: String,
-      default: () => `x-input-${Math.random().toString(36).substr(2, 9)}`
-    }
+  modelValue: [String, Number, Boolean],
+  type: {
+    type: String,
+    default: 'text'
+  },
+  readonly: Boolean,
+  disabled: Boolean,
+  placeholder: String
+},
+  emits: ['update:modelValue'],
+  setup(__props, { emit: __emit }) {
+
+const props = __props
+
+const emit = __emit;
+
+function handleChange(event) {
+  let value = event.target.value;
+  let type = event.target.type;
+  if (type === 'number') {
+    value = value === '' ? null : Number(value);
   }
+  if (type === 'checkbox') {
+    value = event.target.checked;
+  }
+  // emit
+  emit('update:modelValue', value);
+}
+
+(0,external_commonjs_vue_commonjs2_vue_root_Vue_.watch)(() => props.modelValue, (newValue, oldValue) => {
+  console.log('[v-input]:', oldValue, '->', newValue)
 });
 
-;// ./src/components/VInput.vue?vue&type=script&lang=js
+return (_ctx, _cache) => {
+  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("input", {
+    value: __props.modelValue,
+    type: __props.type,
+    onChange: handleChange,
+    readonly: __props.readonly,
+    disabled: __props.disabled,
+    placeholder: __props.placeholder,
+    checked: __props.type === 'checkbox' ? __props.modelValue === true : undefined
+  }, null, 40, _hoisted_1))
+}
+}
+
+});
+;// ./src/components/VInput.vue?vue&type=script&setup=true&lang=js
  
-// EXTERNAL MODULE: ./node_modules/vue-loader/dist/exportHelper.js
-var exportHelper = __webpack_require__(262);
 ;// ./src/components/VInput.vue
 
 
 
-
-;
-const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(VInputvue_type_script_lang_js, [['render',render]])
+const __exports__ = VInputvue_type_script_setup_true_lang_js;
 
 /* harmony default export */ const VInput = (__exports__);
-;// ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VSelect.vue?vue&type=template&id=731daa68&scoped=true
+;// ./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VSelect.vue?vue&type=script&setup=true&lang=js
 
 
-const VSelectvue_type_template_id_731daa68_scoped_true_hoisted_1 = { class: "x-input-wrapper" }
-const _hoisted_2 = ["for"]
-const _hoisted_3 = ["id", "type", "placeholder", "disabled", "readonly", "value"]
-const _hoisted_4 = {
-  key: 1,
-  class: "x-input-error"
-}
+const VSelectvue_type_script_setup_true_lang_js_hoisted_1 = ["value", "readonly", "disabled"]
+const _hoisted_2 = ["value"]
 
-function VSelectvue_type_template_id_731daa68_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("div", VSelectvue_type_template_id_731daa68_scoped_true_hoisted_1, [
-    ($props.label)
-      ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("label", {
-          key: 0,
-          for: $props.id,
-          class: "x-input-label"
-        }, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)($props.label), 9, _hoisted_2))
-      : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true),
-    (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementVNode)("input", {
-      id: $props.id,
-      type: $props.type,
-      placeholder: $props.placeholder,
-      disabled: $props.disabled,
-      readonly: $props.readonly,
-      value: $props.modelValue,
-      onInput: _cache[0] || (_cache[0] = $event => (_ctx.$emit('update:modelValue', $event.target.value))),
-      class: "x-input"
-    }, null, 40, _hoisted_3),
-    ($props.error)
-      ? ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("span", _hoisted_4, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)($props.error), 1))
-      : (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createCommentVNode)("", true)
-  ]))
-}
-;// ./src/components/VSelect.vue?vue&type=template&id=731daa68&scoped=true
+;
 
-;// ./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VSelect.vue?vue&type=script&lang=js
 
-/* harmony default export */ const VSelectvue_type_script_lang_js = ({
-  name: 'XInput',
+/* harmony default export */ const VSelectvue_type_script_setup_true_lang_js = ({
+  __name: 'VSelect',
   props: {
-    modelValue: [String, Number],
-    type: {
-      type: String,
-      default: 'text'
-    },
-    label: {
-      type: String,
-      default: ''
-    },
-    placeholder: {
-      type: String,
-      default: ''
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    readonly: {
-      type: Boolean,
-      default: false
-    },
-    error: {
-      type: String,
-      default: ''
-    },
-    id: {
-      type: String,
-      default: () => `x-input-${Math.random().toString(36).substr(2, 9)}`
-    }
+  modelValue: [String, Number],
+  readonly: Boolean,
+  disabled: Boolean,
+  options: {
+    type: Array,
+    required: false,
+    default: () => []
+  },
+  optionValueProperty: {
+    type: String,
+    default: 'value'
+  },
+  optionTextProperty: {
+    type: String,
+    default: 'text'
   }
+},
+  emits: ['update:modelValue', 'update:options'],
+  setup(__props, { emit: __emit }) {
+
+const props = __props
+
+const emit = __emit
+
+function handleChange(event) {
+  let value = event.target.value;
+  emit('update:modelValue', value);
+}
+
+(0,external_commonjs_vue_commonjs2_vue_root_Vue_.watch)(() => props.modelValue, (newValue, oldValue) => {
+  console.log('[v-select]:', oldValue, '->', newValue)
+})
+
+return (_ctx, _cache) => {
+  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("select", {
+    value: __props.modelValue,
+    onChange: handleChange,
+    readonly: __props.readonly,
+    disabled: __props.disabled
+  }, [
+    (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderSlot)(_ctx.$slots, "default"),
+    ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(true), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)(external_commonjs_vue_commonjs2_vue_root_Vue_.Fragment, null, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.renderList)(__props.options, (option, index) => {
+      return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("option", {
+        key: index,
+        value: option[__props.optionValueProperty]
+      }, (0,external_commonjs_vue_commonjs2_vue_root_Vue_.toDisplayString)(option[__props.optionTextProperty]), 9, _hoisted_2))
+    }), 128))
+  ], 40, VSelectvue_type_script_setup_true_lang_js_hoisted_1))
+}
+}
+
 });
-
-;// ./src/components/VSelect.vue?vue&type=script&lang=js
+;// ./src/components/VSelect.vue?vue&type=script&setup=true&lang=js
  
-;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-52.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-52.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-52.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VSelect.vue?vue&type=style&index=0&id=731daa68&scoped=true&lang=css
-// extracted by mini-css-extract-plugin
-
-;// ./src/components/VSelect.vue?vue&type=style&index=0&id=731daa68&scoped=true&lang=css
-
 ;// ./src/components/VSelect.vue
 
 
 
+const VSelect_exports_ = VSelectvue_type_script_setup_true_lang_js;
+
+/* harmony default export */ const VSelect = (VSelect_exports_);
+;// ./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/VTextarea.vue?vue&type=script&setup=true&lang=js
+
+
+const VTextareavue_type_script_setup_true_lang_js_hoisted_1 = ["value", "readonly", "disabled", "placeholder"]
 
 ;
 
 
-const VSelect_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(VSelectvue_type_script_lang_js, [['render',VSelectvue_type_template_id_731daa68_scoped_true_render],['__scopeId',"data-v-731daa68"]])
+/* harmony default export */ const VTextareavue_type_script_setup_true_lang_js = ({
+  __name: 'VTextarea',
+  props: {
+  modelValue: [String],
+  readonly: Boolean,
+  disabled: Boolean,
+  placeholder: String
+},
+  emits: ['update:modelValue'],
+  setup(__props, { emit: __emit }) {
 
-/* harmony default export */ const VSelect = (VSelect_exports_);
+const props = __props
+
+const emit = __emit;
+
+function handleChange(event) {
+  let value = event.target.value;
+  // emit
+  emit('update:modelValue', value);
+}
+
+(0,external_commonjs_vue_commonjs2_vue_root_Vue_.watch)(() => props.modelValue, (newValue, oldValue) => {
+  console.log('[v-textarea]:', oldValue, '->', newValue)
+});
+
+return (_ctx, _cache) => {
+  return ((0,external_commonjs_vue_commonjs2_vue_root_Vue_.openBlock)(), (0,external_commonjs_vue_commonjs2_vue_root_Vue_.createElementBlock)("textarea", {
+    value: __props.modelValue,
+    onChange: handleChange,
+    readonly: __props.readonly,
+    disabled: __props.disabled,
+    placeholder: __props.placeholder
+  }, null, 40, VTextareavue_type_script_setup_true_lang_js_hoisted_1))
+}
+}
+
+});
+;// ./src/components/VTextarea.vue?vue&type=script&setup=true&lang=js
+ 
+;// ./src/components/VTextarea.vue
+
+
+
+const VTextarea_exports_ = VTextareavue_type_script_setup_true_lang_js;
+
+/* harmony default export */ const VTextarea = (VTextarea_exports_);
 ;// ./src/index.js
+
+
 
 
 
@@ -301,6 +345,7 @@ const VSelect_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(VSelectvue
   install(app) {
     app.component('VInput', VInput);
     app.component('VSelect', VSelect);
+    app.component('VTextarea', VTextarea);
   }
 });
 
