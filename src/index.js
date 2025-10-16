@@ -6,7 +6,8 @@ import VTextarea from './components/VTextarea.vue';
 export { 
   DataHandler,
   VInput, 
-  VSelect 
+  VSelect,
+  VTextarea
 };
 
 export default {
