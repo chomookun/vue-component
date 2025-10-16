@@ -24,6 +24,7 @@
         <th>Name</th>
         <th>Age</th>
         <th>Enabled</th>
+        <th>Type</th>
       </tr>
     </thead>
     <tbody v-for="(row, index) in myArray">
@@ -31,6 +32,14 @@
         <td><v-input v-model="row.name" type="text"/></td>
         <td><v-input v-model="row.age" type="number"/></td>
         <td><v-input v-model="row.enabled" type="checkbox"/></td>
+        <td>
+          <v-select v-model="myObject.type"
+          :options="types"
+          option-value-property="code"
+          option-text-property="name">
+            <option value>type...</option>
+          </v-select>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -78,7 +87,7 @@
 
   function getMyArray() {
     DataHandler.assign(myArray, [
-      { name: 'Apple1', age: 100 }
+      { name: 'Apple1', age: 100 , type:'HUMAN' }
     ]);
   }
   
