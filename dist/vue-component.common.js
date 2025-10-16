@@ -47,6 +47,7 @@ __webpack_require__.d(__webpack_exports__, {
   DataHandler: () => (/* reexport */ src_DataHandler),
   VInput: () => (/* reexport */ VInput),
   VSelect: () => (/* reexport */ VSelect),
+  VTextarea: () => (/* reexport */ VTextarea),
   "default": () => (/* binding */ entry_lib)
 });
 
@@ -80,16 +81,16 @@ const DataHandler = {
   },
 
   assignObject(target, source) {
-    // for (const key in target) {
-    //   delete target[key]
-    // }
-    // Object.assign(target, source)
     for (const key in target) {
-      if (!(key in source)) delete target[key];
+      delete target[key]
     }
-    for (const key in source) {
-      target[key] = source[key]; // 직접 할당 → 반응성 유지
-    }
+    Object.assign(target, source)
+    // for (const key in target) {
+    //   if (!(key in source)) delete target[key];
+    // }
+    // for (const key in source) {
+    //   target[key] = source[key]; // 직접 할당 → 반응성 유지
+    // }
   },
 
   assignArray(target, source) {
